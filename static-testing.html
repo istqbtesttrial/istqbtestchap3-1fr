@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tests Statiques - Vue d'ensemble</title>
+    <title>Tests Statiques</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -39,30 +39,25 @@
     <p id="feedback" style="color: red; font-weight: bold;"></p>
 </div>
 <footer>
-<<<<<<< HEAD
-    <p>&copy; 2024 Belhaj Ouajdi fr</p>
-=======
-    <p>&copy; 2024 Belhaj Ouajdi</p>
->>>>>>> aacd6feba2790ada11d1b13c988ff5f3cc01a05b
+    <p>© 2024 Belhaj Ouajdi</p>
 </footer>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const defects = [
             { text: 'messages d\'erreur détaillés', feedback: 'Les messages d\'erreur ne doivent pas révéler d\'informations internes sur le système.' },
             { text: 'texte clair dans la base de données', feedback: 'Les mots de passe ne doivent jamais être stockés en texte clair.' }
         ];
         const feedbackElement = document.getElementById('feedback');
 
-        document.getElementById('requirement-example').addEventListener('click', function(event) {
+        document.getElementById('requirement-example').addEventListener('click', function (event) {
             const clickedText = event.target.textContent;
             const defect = defects.find(def => clickedText.includes(def.text));
 
             if (defect) {
                 feedbackElement.textContent = defect.feedback;
             } else {
-                feedbackElement.textContent = 'Ce n\'est pas un défaut. Essayez encore !';
+                feedbackElement.textContent = 'Ce n\'est pas un défaut. Réessayez !';
             }
-            feedbackElement.scrollIntoView({ behavior: 'smooth' });
         });
     });
 </script>

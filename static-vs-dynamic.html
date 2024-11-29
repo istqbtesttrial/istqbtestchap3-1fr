@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Statique vs Test Dynamique</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Test Statique vs Test Dynamique</h1>
+</header>
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="static-testing.html">Tests Statiques</a>
+    <a href="work-products.html">Produits d'Activités</a>
+    <a href="review-techniques.html">Techniques de Revue</a>
+    <a href="static-vs-dynamic.html">Statique vs Dynamique</a>
+    <a href="why-reviews-matter.html">Importance des Revues</a>
+    <a href="roles-responsibilities.html">Rôles et Responsabilités</a>
+    <a href="summary.html">Résumé</a>
+</nav>
+<div class="container">
+    <h2>Comparer les Tests Statiques et Dynamiques</h2>
+    <p>Comprenez les principales différences entre les tests statiques et dynamiques, et comment chaque méthode aide à identifier les défauts dans le développement logiciel.</p>
+
+    <h3>Exercice de Comparaison</h3>
+    <p>Explorez un scénario où les tests statiques et dynamiques sont appliqués. Découvrez comment chaque méthode révèle différents types de défauts :</p>
+
+    <div style="margin-bottom: 20px;">
+        <button onclick="showTesting('static')">Test Statique</button>
+        <button onclick="showTesting('dynamic')">Test Dynamique</button>
+    </div>
+
+    <div id="testing-details" style="border: 1px solid #ccc; padding: 15px; background-color: #f9f9f9;">
+        <p>Sélectionnez une méthode de test pour voir comment elle identifie les défauts.</p>
+    </div>
+
+    <p id="testing-feedback" style="color: green; font-weight: bold;"></p>
+</div>
+<footer>
+    <p>&copy; 2024 Belhaj Ouajdi</p>
+</footer>
+<script>
+    function showTesting(type) {
+        const testingDetails = document.getElementById('testing-details');
+        const feedback = document.getElementById('testing-feedback');
+
+        if (type === 'static') {
+            testingDetails.innerHTML = `
+                    <h4>Test Statique</h4>
+                    <p>Le test statique consiste à examiner les produits de travail tels que les spécifications des exigences, les documents de conception et le code, sans exécuter le code. Il permet d'identifier les défauts tôt dans le processus de développement.</p>
+                    <p><strong>Scénario :</strong> Lors d'une revue des spécifications des exigences, un test statique révèle que les exigences sont ambiguës et incomplètes, ce qui pourrait entraîner des interprétations erronées pendant le développement.</p>
+                    <p>Résultat : L'ambiguïté est corrigée avant que le code ne soit écrit, empêchant ainsi les défauts potentiels dus à des exigences peu claires.</p>
+                `;
+            feedback.textContent = 'Le test statique excelle dans la détection précoce des défauts, en particulier ceux liés à la documentation et à la conception.';
+        } else if (type === 'dynamic') {
+            testingDetails.innerHTML = `
+                    <h4>Test Dynamique</h4>
+                    <p>Le test dynamique implique l'exécution du code et le test du logiciel pendant son fonctionnement. Il permet d'identifier les défauts liés à la fonctionnalité, aux performances et à d'autres aspects visibles uniquement lorsque le logiciel est en cours d'exécution.</p>
+                    <p><strong>Scénario :</strong> Lors d'un test dynamique, on découvre qu'une fonctionnalité particulière plante lorsqu'elle est utilisée sous forte charge, ce qui n'avait pas été identifié lors des tests statiques.</p>
+                    <p>Résultat : Le problème est corrigé, garantissant que le logiciel fonctionne correctement dans diverses conditions.</p>
+                `;
+            feedback.textContent = 'Le test dynamique est crucial pour identifier les défauts qui apparaissent uniquement lors de l'exécution du code, tels que les problèmes de performance.';
+        } else {
+            testingDetails.innerHTML = '<p>Sélectionnez une méthode de test pour voir comment elle identifie les défauts.</p>';
+            feedback.textContent = '';
+        }
+
+        testingDetails.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>

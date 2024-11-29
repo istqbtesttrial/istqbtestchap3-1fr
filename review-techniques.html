@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techniques de Revue - Tests Statiques</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Techniques de Revue</h1>
+</header>
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="static-testing.html">Tests Statiques</a>
+    <a href="work-products.html">Produits d'Activités</a>
+    <a href="review-techniques.html">Techniques de Revue</a>
+    <a href="static-vs-dynamic.html">Statique vs Dynamique</a>
+    <a href="why-reviews-matter.html">Importance des Revues</a>
+    <a href="roles-responsibilities.html">Rôles et Responsabilités</a>
+    <a href="summary.html">Résumé</a>
+</nav>
+<div class="container">
+    <h2>Techniques de Revue Formelles</h2>
+    <p>Dans cette section, vous découvrirez différentes techniques de revue telles que les walkthroughs et les inspections. Ces techniques aident à garantir que les produits de travail répondent aux normes de qualité requises.</p>
+
+    <h3>Démo Interactive : Walkthrough vs Inspection</h3>
+    <p>Explorez comment différentes techniques de revue peuvent identifier des défauts dans un document d'exemple. Sélectionnez une technique pour voir son fonctionnement :</p>
+
+    <div style="margin-bottom: 20px;">
+        <button onclick="showTechnique('walkthrough')">Walkthrough</button>
+        <button onclick="showTechnique('inspection')">Inspection</button>
+    </div>
+
+    <div id="technique-details" style="border: 1px solid #ccc; padding: 15px; background-color: #f9f9f9;">
+        <p>Sélectionnez une technique pour voir son fonctionnement.</p>
+    </div>
+
+    <p id="feedback" style="color: green; font-weight: bold;"></p>
+</div>
+<footer>
+    <p>&copy; 2024 Belhaj Ouajdi</p>
+</footer>
+<script src="js/scripts.js"></script>
+<script>
+    function showTechnique(technique) {
+        const techniqueDetails = document.getElementById('technique-details');
+        const feedback = document.getElementById('feedback');
+
+        if (technique === 'walkthrough') {
+            techniqueDetails.innerHTML = `
+                    <h4>Walkthrough</h4>
+                    <p>Lors d'un walkthrough, l'auteur du produit de travail guide les participants à travers le document, expliquant le contenu et les raisons des décisions prises.</p>
+                    <p><strong>Scénario :</strong> Pendant le walkthrough d'un document d'exigences, l'auteur explique un algorithme complexe. Un participant soulève une préoccupation selon laquelle l'algorithme pourrait ne pas bien s'adapter à de grands ensembles de données, entraînant un problème de performance. Cette préoccupation est notée pour une analyse approfondie.</p>
+                    <p>Résultat : Le walkthrough permet d'identifier les problèmes potentiels de performance tôt dans le processus, permettant à l'équipe de les résoudre avant la mise en œuvre.</p>
+                `;
+            feedback.textContent = 'Les walkthroughs sont excellents pour partager des connaissances et identifier des problèmes qui pourraient être négligés lors de revues individuelles.';
+        } else if (technique === 'inspection') {
+            techniqueDetails.innerHTML = `
+                    <h4>Inspection</h4>
+                    <p>Une inspection est une technique de revue plus formelle et structurée. Chaque participant examine individuellement le document avant la réunion, et pendant la réunion, ils discutent des problèmes spécifiques identifiés.</p>
+                    <p><strong>Scénario :</strong> Lors de l'inspection d'un document de conception, un réviseur remarque qu'une vérification de sécurité critique est manquante. Ce problème est soulevé et discuté par l'équipe, conduisant à l'ajout des mesures de sécurité nécessaires dans la conception.</p>
+                    <p>Résultat : L'inspection permet de découvrir des défauts significatifs, tels que des vérifications de sécurité manquantes, qui auraient pu entraîner des vulnérabilités graves si elles n'avaient pas été détectées tôt.</p>
+                `;
+            feedback.textContent = 'Les inspections sont très efficaces pour identifier les défauts critiques, en particulier ceux liés à la sécurité et à la conformité.';
+        } else {
+            techniqueDetails.innerHTML = '<p>Sélectionnez une technique pour voir son fonctionnement.</p>';
+            feedback.textContent = '';
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produits d'Activités - Tests Statiques</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Produits d'Activités pour les Tests Statiques</h1>
+</header>
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="static-testing.html">Tests Statiques</a>
+    <a href="work-products.html">Produits d'Activités</a>
+    <a href="review-techniques.html">Techniques de Revue</a>
+    <a href="static-vs-dynamic.html">Statique vs Dynamique</a>
+    <a href="why-reviews-matter.html">Pourquoi les Revues Comptent</a>
+    <a href="roles-responsibilities.html">Rôles et Responsabilités</a>
+    <a href="summary.html">Résumé</a>
+</nav>
+<div class="container">
+    <h2>Exemples de Produits d'Activités</h2>
+    <p>Les tests statiques peuvent être appliqués à une grande variété de produits d'activités, y compris les spécifications des exigences, le code source et les plans de test.</p>
+
+    <h3>Revue Interactive : Identifiez les Problèmes</h3>
+    <p>Examinez la description suivante d'un produit d'activité. Mettez en évidence les parties qui, selon vous, pourraient être améliorées ou poser problème :</p>
+
+    <div id="work-product-example" style="border: 1px solid #ccc; padding: 15px; background-color: #f9f9f9;">
+        <ul>
+            <li>La base de données doit pouvoir stocker un nombre illimité d'enregistrements utilisateur.</li>
+            <li>Les mots de passe seront chiffrés à l'aide d'un algorithme réversible simple pour faciliter leur récupération.</li>
+            <li>Le système doit pouvoir gérer jusqu'à 100 utilisateurs se connectant simultanément.</li>
+        </ul>
+    </div>
+
+    <p id="work-product-feedback" style="color: red; font-weight: bold;"></p>
+</div>
+<footer>
+    <p>&copy; 2024 Belhaj Ouajdi</p>
+</footer>
+<script src="js/scripts.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const issues = [
+            { text: 'nombre illimité d\'enregistrements utilisateur', feedback: 'Cela pourrait entraîner des problèmes de performance. Pensez à définir une limite raisonnable.' },
+            { text: 'algorithme réversible', feedback: 'Le chiffrement réversible n\'est pas sécurisé pour stocker des mots de passe.' }
+        ];
+        const feedbackElement = document.getElementById('work-product-feedback');
+
+        document.getElementById('work-product-example').addEventListener('click', function(event) {
+            const clickedText = event.target.textContent;
+            const issue = issues.find(issue => clickedText.includes(issue.text));
+
+            if (issue) {
+                feedbackElement.textContent = issue.feedback;
+            } else {
+                feedbackElement.textContent = 'Ce n\'est pas un problème. Essayez encore !';
+            }
+        });
+    });
+</script>
+</body>
+</html>

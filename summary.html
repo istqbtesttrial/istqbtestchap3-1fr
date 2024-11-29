@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résumé du Cours</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Résumé du Cours</h1>
+</header>
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="static-testing.html">Tests Statiques</a>
+    <a href="work-products.html">Produits d'Activités</a>
+    <a href="review-techniques.html">Techniques de Revue</a>
+    <a href="static-vs-dynamic.html">Statique vs Dynamique</a>
+    <a href="why-reviews-matter.html">Pourquoi les Revues Comptent</a>
+    <a href="roles-responsibilities.html">Rôles et Responsabilités</a>
+    <a href="summary.html">Résumé</a>
+</nav>
+<div class="container">
+    <h2>Récapitulatif du Cours et Préparation ISTQB</h2>
+    <p>Cette page récapitule tous les points clés abordés dans le cours et fournit des conseils finaux pour votre préparation à l'examen ISTQB.</p>
+
+    <h3>Quiz Final</h3>
+    <p>Testez vos connaissances avec un quiz couvrant tout ce que vous avez appris :</p>
+
+    <div id="quiz">
+        <p><strong>Question 1 :</strong> Quel est l'objectif principal des tests statiques ?</p>
+        <button onclick="checkAnswer('q1', 'a')">A) Identifier les défauts sans exécuter le code</button>
+        <button onclick="checkAnswer('q1', 'b')">B) Identifier les défauts pendant l'exécution</button>
+        <button onclick="checkAnswer('q1', 'c')">C) Évaluer les performances du système</button>
+        <p id="q1-feedback" style="color: green;"></p>
+
+        <p><strong>Question 2 :</strong> Quel rôle est responsable de modérer le processus de revue ?</p>
+        <button onclick="checkAnswer('q2', 'a')">A) Manager</button>
+        <button onclick="checkAnswer('q2', 'b')">B) Modérateur</button>
+        <button onclick="checkAnswer('q2', 'c')">C) Scribe</button>
+        <p id="q2-feedback" style="color: green;"></p>
+
+        <p><strong>Question 3 :</strong> Quelle est la différence entre les tests statiques et dynamiques ?</p>
+        <button onclick="checkAnswer('q3', 'a')">A) Les tests statiques impliquent l'exécution du code ; les tests dynamiques non.</button>
+        <button onclick="checkAnswer('q3', 'b')">B) Les tests dynamiques impliquent l'exécution du code ; les tests statiques non.</button>
+        <button onclick="checkAnswer('q3', 'c')">C) Les deux impliquent l'exécution du code.</button>
+        <p id="q3-feedback" style="color: green;"></p>
+
+        <p><strong>Question 4 :</strong> Quel est le principal avantage d'un feedback précoce des parties prenantes ?</p>
+        <button onclick="checkAnswer('q4', 'a')">A) Il accélère le processus de développement.</button>
+        <button onclick="checkAnswer('q4', 'b')">B) Il prévient les malentendus et réduit les retouches coûteuses.</button>
+        <button onclick="checkAnswer('q4', 'c')">C) Il garantit que toutes les parties prenantes sont satisfaites du produit final.</button>
+        <p id="q4-feedback" style="color: green;"></p>
+    </div>
+
+    <p id="final-score" style="color: blue; font-weight: bold;"></p>
+</div>
+<footer>
+    <p>&copy; 2024 Belhaj Ouajdi</p>
+</footer>
+<script src="js/scripts.js"></script>
+<script>
+    let score = 0;
+
+    function checkAnswer(question, answer) {
+        const feedbackElement = document.getElementById(`${question}-feedback`);
+        let correctAnswer = '';
+
+        switch (question) {
+            case 'q1':
+                correctAnswer = 'a';
+                break;
+            case 'q2':
+                correctAnswer = 'b';
+                break;
+            case 'q3':
+                correctAnswer = 'b';
+                break;
+            case 'q4':
+                correctAnswer = 'b';
+                break;
+        }
+
+        if (answer === correctAnswer) {
+            feedbackElement.textContent = 'Correct !';
+            feedbackElement.style.color = 'green';
+            score += 1;
+        } else {
+            feedbackElement.textContent = 'Incorrect. Essayez encore !';
+            feedbackElement.style.color = 'red';
+        }
+
+        feedbackElement.scrollIntoView({ behavior: 'smooth' });
+
+        if (document.querySelectorAll('#quiz p').length === 8) {
+            document.getElementById('final-score').textContent = `Votre score est de ${score} sur 4.`;
+        }
+    }
+</script>
+</body>
+</html>

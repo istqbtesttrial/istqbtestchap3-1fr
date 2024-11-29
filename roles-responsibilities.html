@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rôles et Responsabilités dans une Revue</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Rôles et Responsabilités dans une Revue</h1>
+</header>
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="static-testing.html">Tests Statiques</a>
+    <a href="work-products.html">Produits d'Activités</a>
+    <a href="review-techniques.html">Techniques de Revue</a>
+    <a href="static-vs-dynamic.html">Statique vs Dynamique</a>
+    <a href="why-reviews-matter.html">Importance des Revues</a>
+    <a href="roles-responsibilities.html">Rôles et Responsabilités</a>
+    <a href="summary.html">Résumé</a>
+</nav>
+<div class="container">
+    <h2>Comprendre les Rôles dans une Revue</h2>
+    <p>Découvrez les rôles clés dans un processus de revue formelle et leurs responsabilités respectives.</p>
+
+    <h3>Exercice de Simulation</h3>
+    <p>Jouez différents rôles dans une revue et explorez comment chacun contribue au processus :</p>
+
+    <div style="margin-bottom: 20px;">
+        <button onclick="showRole('manager')">Manager</button>
+        <button onclick="showRole('author')">Auteur</button>
+        <button onclick="showRole('moderator')">Modérateur</button>
+        <button onclick="showRole('scribe')">Scribe</button>
+        <button onclick="showRole('reviewer')">Relecteur</button>
+        <button onclick="showRole('leader')">Responsable de la Revue</button>
+    </div>
+
+    <div id="role-details" style="border: 1px solid #ccc; padding: 15px; background-color: #f9f9f9;">
+        <p>Sélectionnez un rôle pour voir comment il contribue au processus de revue.</p>
+    </div>
+
+    <p id="role-impact" style="color: green; font-weight: bold;"></p>
+</div>
+<footer>
+    <p>&copy; 2024 Belhaj Ouajdi</p>
+</footer>
+<script>
+    function showRole(role) {
+        const roleDetails = document.getElementById('role-details');
+        const roleImpact = document.getElementById('role-impact');
+
+        if (role === 'manager') {
+            roleDetails.innerHTML = `
+                    <h4>Manager</h4>
+                    <p>Le manager décide de ce qui doit être revu et fournit les ressources nécessaires, y compris le personnel et le temps.</p>
+                    <p><strong>Scénario :</strong> Le manager s'assure qu'un document de conception critique est examiné avant la prochaine phase, en affectant une équipe de réviseurs expérimentés à la tâche.</p>
+                    <p>Impact : En allouant efficacement les ressources, le manager garantit une revue approfondie pour identifier et résoudre les problèmes tôt.</p>
+                `;
+            roleImpact.textContent = 'Le manager joue un rôle clé en définissant le périmètre et en soutenant le processus de revue.';
+        } else if (role === 'author') {
+            roleDetails.innerHTML = `
+                    <h4>Auteur</h4>
+                    <p>L'auteur est le créateur du produit de travail examiné. Il doit être ouvert aux commentaires et prêt à apporter les révisions nécessaires.</p>
+                    <p><strong>Scénario :</strong> L'auteur explique le raisonnement derrière un algorithme complexe lors de la revue, recevant des commentaires qui mènent à une solution simplifiée et plus efficace.</p>
+                    <p>Impact : L'engagement de l'auteur dans le processus de revue conduit à des améliorations du produit de travail.</p>
+                `;
+            roleImpact.textContent = "L'engagement de l'auteur est essentiel pour améliorer la qualité du produit de travail.";
+        } else if (role === 'moderator') {
+            roleDetails.innerHTML = `
+                    <h4>Modérateur</h4>
+                    <p>Le modérateur facilite la réunion de revue, veillant à son bon déroulement et à ce que tous les participants puissent contribuer.</p>
+                    <p><strong>Scénario :</strong> Le modérateur garde la revue concentrée et sur la bonne voie, s'assurant que tous les problèmes sont abordés dans le temps imparti.</p>
+                    <p>Impact : Un bon modérateur garantit que le processus de revue est efficace et que tous les problèmes pertinents sont discutés.</p>
+                `;
+            roleImpact.textContent = 'Le modérateur assure une revue structurée et productive.';
+        } else if (role === 'scribe') {
+            roleDetails.innerHTML = `
+                    <h4>Scribe</h4>
+                    <p>Le scribe documente les résultats de la revue, en enregistrant les défauts, décisions et actions.</p>
+                    <p><strong>Scénario :</strong> Le scribe enregistre avec précision un défaut critique et la solution convenue, garantissant qu'il est suivi et résolu.</p>
+                    <p>Impact : La documentation précise du scribe est essentielle pour traiter tous les problèmes après la revue.</p>
+                `;
+            roleImpact.textContent = 'Le rôle du scribe est crucial pour maintenir une trace claire des résultats de la revue.';
+        } else if (role === 'reviewer') {
+            roleDetails.innerHTML = `
+                    <h4>Relecteur</h4>
+                    <p>Le relecteur examine le produit de travail pour identifier les défauts et proposer des améliorations. Les relecteurs peuvent être des experts, des membres de l'équipe ou d'autres parties prenantes.</p>
+                    <p><strong>Scénario :</strong> Un relecteur identifie une vulnérabilité de sécurité potentielle dans le code, ce qui mène à une discussion et à une correction avant la sortie du produit.</p>
+                    <p>Impact : Les relecteurs sont essentiels pour identifier les défauts, contribuant directement à la qualité du produit.</p>
+                `;
+            roleImpact.textContent = 'Les relecteurs apportent des perspectives variées et une expertise essentielle au processus.';
+        } else if (role === 'leader') {
+            roleDetails.innerHTML = `
+                    <h4>Responsable de la Revue</h4>
+                    <p>Le responsable de la revue prend la responsabilité globale du processus, décidant qui y participera et organisant le moment et le lieu de la revue.</p>
+                    <p><strong>Scénario :</strong> Le responsable de la revue sélectionne une équipe diversifiée pour examiner tous les aspects du produit de travail.</p>
+                    <p>Impact : Les décisions du responsable influencent l'efficacité et la rigueur du processus de revue.</p>
+                `;
+            roleImpact.textContent = 'Le responsable de la revue orchestre l’ensemble du processus pour garantir son succès.';
+        } else {
+            roleDetails.innerHTML = '<p>Sélectionnez un rôle pour voir comment il contribue au processus de revue.</p>';
+            roleImpact.textContent = '';
+        }
+
+        roleDetails.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>

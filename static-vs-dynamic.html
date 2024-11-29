@@ -13,7 +13,7 @@
 <nav>
     <a href="index.html">Accueil</a>
     <a href="static-testing.html">Tests Statiques</a>
-    <a href="work-products.html">Produits d'Activités</a>
+    <a href="work-products.html">Produits d\'Activités</a>
     <a href="review-techniques.html">Techniques de Revue</a>
     <a href="static-vs-dynamic.html">Statique vs Dynamique</a>
     <a href="why-reviews-matter.html">Importance des Revues</a>
@@ -39,7 +39,7 @@
     <p id="testing-feedback" style="color: green; font-weight: bold;"></p>
 </div>
 <footer>
-    <p>&copy; 2024 Belhaj Ouajdi</p>
+    <p>&copy; 2024 Belhaj Ouajdi fr</p>
 </footer>
 <script>
     function showTesting(type) {
@@ -48,20 +48,20 @@
 
         if (type === 'static') {
             testingDetails.innerHTML = `
-            <h4>Test Statique</h4>
-            <p>Le test statique consiste à examiner les produits de travail tels que les spécifications des exigences, les documents de conception et le code, sans exécuter le code. Il permet d'identifier les défauts tôt dans le processus de développement.</p>
-            <p><strong>Scénario :</strong> Lors d'une revue des spécifications des exigences, un test statique révèle que les exigences sont ambiguës et incomplètes, ce qui pourrait entraîner des interprétations erronées pendant le développement.</p>
-            <p>Résultat : L'ambiguïté est corrigée avant que le code ne soit écrit, empêchant ainsi les défauts potentiels dus à des exigences peu claires.</p>
-        `;
+                <h4>Test Statique</h4>
+                <p>Le test statique consiste à examiner les produits de travail tels que les spécifications des exigences, les documents de conception et le code, sans exécuter le code. Il permet d\'identifier les défauts tôt dans le processus de développement.</p>
+                <p><strong>Scénario :</strong> Lors d\'une revue des spécifications des exigences, un test statique révèle que les exigences sont ambiguës et incomplètes, ce qui pourrait entraîner des interprétations erronées pendant le développement.</p>
+                <p>Résultat : L\'ambiguïté est corrigée avant que le code ne soit écrit, empêchant ainsi les défauts potentiels dus à des exigences peu claires.</p>
+            `;
             feedback.textContent = 'Le test statique excelle dans la détection précoce des défauts, en particulier ceux liés à la documentation et à la conception.';
         } else if (type === 'dynamic') {
             testingDetails.innerHTML = `
-            <h4>Test Dynamique</h4>
-            <p>Le test dynamique implique l'exécution du code et le test du logiciel pendant son fonctionnement. Il permet d'identifier les défauts liés à la fonctionnalité, aux performances et à d'autres aspects visibles uniquement lorsque le logiciel est en cours d'exécution.</p>
-            <p><strong>Scénario :</strong> Lors d'un test dynamique, on découvre qu'une fonctionnalité particulière plante lorsqu'elle est utilisée sous forte charge, ce qui n'avait pas été identifié lors des tests statiques.</p>
-            <p>Résultat : Le problème est corrigé, garantissant que le logiciel fonctionne correctement dans diverses conditions.</p>
-        `;
-            feedback.textContent = "Le test dynamique est crucial pour identifier les défauts qui apparaissent uniquement lors de l'exécution du code, tels que les problèmes de performance.";
+                <h4>Test Dynamique</h4>
+                <p>Le test dynamique implique l\'exécution du code et le test du logiciel pendant son fonctionnement. Il permet d\'identifier les défauts liés à la fonctionnalité, aux performances et à d\'autres aspects visibles uniquement lorsque le logiciel est en cours d\'exécution.</p>
+                <p><strong>Scénario :</strong> Lors d\'un test dynamique, on découvre qu\'une fonctionnalité particulière plante lorsqu\'elle est utilisée sous forte charge, ce qui n\'avait pas été identifié lors des tests statiques.</p>
+                <p>Résultat : Le problème est corrigé, garantissant que le logiciel fonctionne correctement dans diverses conditions.</p>
+            `;
+            feedback.textContent = 'Le test dynamique est crucial pour identifier les défauts qui apparaissent uniquement lors de l\'exécution du code, tels que les problèmes de performance.';
         } else {
             testingDetails.innerHTML = '<p>Sélectionnez une méthode de test pour voir comment elle identifie les défauts.</p>';
             feedback.textContent = '';
@@ -69,7 +69,6 @@
 
         testingDetails.scrollIntoView({ behavior: 'smooth' });
     }
-
 </script>
 </body>
 </html>

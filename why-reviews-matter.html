@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pourquoi les Revues Comptent</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Pourquoi les Revues Comptent</h1>
+</header>
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="static-testing.html">Tests Statiques</a>
+    <a href="work-products.html">Produits d'Activités</a>
+    <a href="review-techniques.html">Techniques de Revue</a>
+    <a href="static-vs-dynamic.html">Statique vs Dynamique</a>
+    <a href="why-reviews-matter.html">Pourquoi les Revues Comptent</a>
+    <a href="roles-responsibilities.html">Rôles et Responsabilités</a>
+    <a href="summary.html">Résumé</a>
+</nav>
+<div class="container">
+    <h2>Importance des Revues</h2>
+    <p>Découvrez le rôle crucial que jouent les revues dans le cycle de vie du développement logiciel et comment elles peuvent prévenir des erreurs coûteuses.</p>
+
+    <h3>Simulation de Feedback des Parties Prenantes</h3>
+    <p>Simulez la collecte de feedback précoce auprès des parties prenantes et découvrez comment cela influence le succès du projet :</p>
+
+    <div style="margin-bottom: 20px;">
+        <button onclick="gatherFeedback('positive')">Recueillir un Feedback Positif</button>
+        <button onclick="gatherFeedback('negative')">Recueillir un Feedback Négatif</button>
+    </div>
+
+    <div id="feedback-details" style="border: 1px solid #ccc; padding: 15px; background-color: #f9f9f9;">
+        <p>Sélectionnez un type de feedback pour voir son impact sur le projet.</p>
+    </div>
+
+    <p id="feedback-impact" style="color: green; font-weight: bold;"></p>
+</div>
+<footer>
+    <p>&copy; 2024 Belhaj Ouajdi</p>
+</footer>
+<script>
+    function gatherFeedback(type) {
+        const feedbackDetails = document.getElementById('feedback-details');
+        const feedbackImpact = document.getElementById('feedback-impact');
+
+        if (type === 'positive') {
+            feedbackDetails.innerHTML = `
+                    <h4>Feedback Positif</h4>
+                    <p>Les parties prenantes sont satisfaites des progrès actuels. Elles estiment que le produit correspond bien à leurs attentes et proposent des suggestions constructives pour affiner certaines fonctionnalités.</p>
+                    <p>Résultat : L'équipe intègre les suggestions, ce qui conduit à un produit qui répond mieux aux besoins des utilisateurs et augmente la satisfaction des parties prenantes.</p>
+                `;
+            feedbackImpact.textContent = 'Un feedback positif précoce renforce la direction du projet et garantit que le produit répond aux attentes des parties prenantes.';
+        } else if (type === 'negative') {
+            feedbackDetails.innerHTML = `
+                    <h4>Feedback Négatif</h4>
+                    <p>Les parties prenantes expriment des préoccupations concernant le fait que le produit s'écarte de leurs attentes. Elles identifient des points clés où le produit ne correspond pas aux exigences initiales et suggèrent des changements importants.</p>
+                    <p>Résultat : L'équipe doit revoir le plan du projet et effectuer des ajustements, ce qui retarde le projet mais aboutit finalement à un produit qui répond mieux aux besoins des parties prenantes.</p>
+                `;
+            feedbackImpact.textContent = 'Un feedback négatif, bien que difficile, est crucial pour corriger la trajectoire et prévenir des erreurs coûteuses plus tard dans le projet.';
+        } else {
+            feedbackDetails.innerHTML = '<p>Sélectionnez un type de feedback pour voir son impact sur le projet.</p>';
+            feedbackImpact.textContent = '';
+        }
+
+        feedbackDetails.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>

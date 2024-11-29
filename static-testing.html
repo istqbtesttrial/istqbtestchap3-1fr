@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests Statiques - Vue d'ensemble</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Tests Statiques</h1>
+</header>
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="static-testing.html">Tests Statiques</a>
+    <a href="work-products.html">Produits d'Activités</a>
+    <a href="review-techniques.html">Techniques de Revue</a>
+    <a href="static-vs-dynamic.html">Statique vs Dynamique</a>
+    <a href="why-reviews-matter.html">Importance des Revues</a>
+    <a href="roles-responsibilities.html">Rôles et Responsabilités</a>
+    <a href="summary.html">Résumé</a>
+</nav>
+<div class="container">
+    <h2>Qu'est-ce que le Test Statique ?</h2>
+    <p>Le test statique est une technique permettant de détecter les défauts dans les produits de travail logiciels sans exécuter le code. Il aide à identifier les défauts tôt, souvent à un coût moindre, en examinant les exigences, les conceptions et le code.</p>
+
+    <h3>Exemple Interactif : Trouvez les Défauts</h3>
+    <p>Voici un exemple de spécification des exigences. Cliquez sur les zones où vous pensez qu'il y a des défauts :</p>
+
+    <div id="requirement-example" style="border: 1px solid #ccc; padding: 15px; background-color: #f9f9f9;">
+        <ul>
+            <li>1. Le système doit permettre aux utilisateurs de se connecter avec leur nom d'utilisateur et leur mot de passe.</li>
+            <li>2. Le système doit permettre aux utilisateurs de réinitialiser leur mot de passe par email ou SMS.</li>
+            <li>3. Le système doit fournir des messages d'erreur détaillés qui révèlent des informations internes sur le système.</li>
+            <li>4. Le système doit stocker les mots de passe en texte clair dans la base de données.</li>
+        </ul>
+    </div>
+
+    <p id="feedback" style="color: red; font-weight: bold;"></p>
+</div>
+<footer>
+    <p>&copy; 2024 Belhaj Ouajdi</p>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const defects = [
+            { text: 'messages d\'erreur détaillés', feedback: 'Les messages d\'erreur ne doivent pas révéler d\'informations internes sur le système.' },
+            { text: 'texte clair dans la base de données', feedback: 'Les mots de passe ne doivent jamais être stockés en texte clair.' }
+        ];
+        const feedbackElement = document.getElementById('feedback');
+
+        document.getElementById('requirement-example').addEventListener('click', function(event) {
+            const clickedText = event.target.textContent;
+            const defect = defects.find(def => clickedText.includes(def.text));
+
+            if (defect) {
+                feedbackElement.textContent = defect.feedback;
+            } else {
+                feedbackElement.textContent = 'Ce n\'est pas un défaut. Essayez encore !';
+            }
+            feedbackElement.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+</body>
+</html>
